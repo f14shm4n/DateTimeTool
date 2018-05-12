@@ -1,6 +1,4 @@
-﻿using DateTimeTool.ViewModels;
-using MahApps.Metro.Controls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,18 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DateTimeTool
+namespace DateTimeTool.Tabs
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для DateAndTime.xaml
     /// </summary>
-    public partial class MainWindow : MetroWindow
+    public partial class DateAndTime : UserControl
     {
-        public MainWindow()
+        public DateAndTime()
         {
             InitializeComponent();
-            
-            DataContext = new MainViewModel();
         }
     }
 }

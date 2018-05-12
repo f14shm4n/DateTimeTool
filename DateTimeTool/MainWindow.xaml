@@ -1,12 +1,19 @@
-﻿<Window x:Class="DateTimeTool.MainWindow"
+﻿<controls:MetroWindow x:Class="DateTimeTool.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:local="clr-namespace:DateTimeTool"
+        xmlns:tabs="clr-namespace:DateTimeTool.Tabs"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="DateTime Tool" Height="333.537" Width="812.284">
     <Grid>
-        
+        <TabControl>
+            <TabItem Header="Date And Time" 
+                     controls:ControlsHelper.HeaderFontSize="16">
+                <tabs:DateAndTime DataContext="{Binding DateAndTimeContext}" />
+            </TabItem>
+        </TabControl>
     </Grid>
-</Window>
+</controls:MetroWindow>
