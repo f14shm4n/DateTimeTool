@@ -10,9 +10,9 @@ using System.Windows;
 [assembly: AssemblyTitle("DateTimeTool")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("f14shm4n")]
 [assembly: AssemblyProduct("DateTimeTool")]
-[assembly: AssemblyCopyright("Copyright ©  2018")]
+[assembly: AssemblyCopyright("Copyright © f14shm4n 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

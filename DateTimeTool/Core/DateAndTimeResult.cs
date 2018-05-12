@@ -6,8 +6,18 @@ using System.Threading.Tasks;
 
 namespace DateTimeTool.Core
 {
-    public class DateAndTimeResult : NotifyModel
+    public class DateAndTimeResult
     {
-        public string DateAndTime { get; set; }
+        private const string DateTimeFormat = "dd MMM yyyy HH:mm:ss";
+                
+        public DateAndTimeResult(DateTime date)
+        {
+            Value = date;
+        }
+
+        public DateTime Value { get; set; }
+        public string LocalTime => Value.ToString(DateTimeFormat);
+        public string UtcTime => Value.ToUniversalTime().ToString(DateTimeFormat);
+        public double TotalMills => Value.Subtract(DateTime.MinValue).TotalMilliseconds;
     }
 }

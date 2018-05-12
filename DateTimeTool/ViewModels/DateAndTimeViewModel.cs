@@ -1,10 +1,12 @@
 ﻿using DateTimeTool.Core;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace DateTimeTool.ViewModels
@@ -157,19 +159,8 @@ namespace DateTimeTool.ViewModels
 
         #endregion
 
-        private List<DateAndTimeResult> _results;
-        public List<DateAndTimeResult> Results
-        {
-            get => _results;
-            set
-            {
-                if (_results != value)
-                {
-                    _results = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
+        private ObservableCollection<DateAndTimeResult> _results;
+        public ObservableCollection<DateAndTimeResult> Results => _results ?? (_results = new ObservableCollection<DateAndTimeResult>());
 
         #endregion
 
@@ -199,7 +190,7 @@ namespace DateTimeTool.ViewModels
         {
             if (CurrentDate == null)
             {
-                // msg
+                MessageBox.Show("The initial date is not set.", "Empty data.", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
@@ -237,15 +228,16 @@ namespace DateTimeTool.ViewModels
                 date = date.AddSeconds(actionType == DateTimeActionType.Add ? OffsetTime_SS.Value : -OffsetTime_SS.Value);
             }
 
-            var r = new DateAndTimeResult
-            {
-                DateAndTime = date.ToString("dd MMM yyyy HH:mm:ss")
-            };
+            var r = new DateAndTimeResult(date);
+            Results.Clear();
+            Results.Add(r);
+        }));
 
-            Results = new List<DateAndTimeResult>
-            {
-                r
-            };
+        private ICommand _copyToClipboard;
+        public ICommand CopyToClipboard => _copyToClipboard ?? (_copyToClipboard = new RelayCommand(_ =>
+        {
+            var r = Results[0];
+            Clipboard.SetText($"Local: {r.LocalTime}\nUTC: {r.UtcTime}\nTotalMills: {r.TotalMills}");            
         }));
 
         #endregion
