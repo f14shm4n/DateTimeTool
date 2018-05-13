@@ -18,6 +18,6 @@ namespace DateTimeTool.Core
         public DateTime Value { get; set; }
         public string LocalTime => Value.ToString(DateTimeFormat);
         public string UtcTime => Value.ToUniversalTime().ToString(DateTimeFormat);
-        public double TotalMills => Value.Subtract(DateTime.MinValue).TotalMilliseconds;
+        public long SysCurrentMills => TimeHelper.CurrentTimeMillis(Value);
     }
 }

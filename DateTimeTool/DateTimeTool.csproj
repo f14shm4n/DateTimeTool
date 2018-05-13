@@ -73,6 +73,7 @@
     <Compile Include="Core\DateAndTimeResult.cs" />
     <Compile Include="Core\NotifyModel.cs" />
     <Compile Include="Core\RelayCommand.cs" />
+    <Compile Include="Core\TimeHelper.cs" />
     <Compile Include="Tabs\DateAndTime.xaml.cs">
       <DependentUpon>DateAndTime.xaml</DependentUpon>
     </Compile>
@@ -124,6 +125,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\shell32_16771.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Assets\Docs\dtt_offset.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

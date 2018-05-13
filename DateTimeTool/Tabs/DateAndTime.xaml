@@ -96,7 +96,7 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Grid>
-                    <Grid.ColumnDefinitions>                        
+                    <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
@@ -133,30 +133,29 @@
                   Grid.Row="1" Grid.ColumnSpan="3"
                   Margin="0 10 0 0"
                   Padding="10">
-            <DataGrid AutoGenerateColumns="False"
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <DataGrid AutoGenerateColumns="False"
                       CanUserAddRows="False"
                       CanUserDeleteRows="False"
                       GridLinesVisibility="All"
                       BorderBrush="Gray"
                       BorderThickness="1"
                       ItemsSource="{Binding Results}">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Local" Binding="{Binding LocalTime, Mode=OneTime}" />
-                    <DataGridTextColumn Header="UTC" Binding="{Binding UtcTime, Mode=OneTime}" />
-                    <DataGridTextColumn Header="Total mills" Binding="{Binding TotalMills, Mode=OneTime}" />
-                    <DataGridTemplateColumn Header="Actions">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <Button FontFamily="Segoe MDL2 Assets" 
-                                            ToolTip="Copy to Clipboard"
-                                            Command="{Binding DataContext.CopyToClipboard, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}">&#xE8C8;</Button>
-                                </StackPanel>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                </DataGrid.Columns>
-            </DataGrid>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Local" Binding="{Binding LocalTime, Mode=OneTime}" />
+                        <DataGridTextColumn Header="UTC" Binding="{Binding UtcTime, Mode=OneTime}" />
+                        <DataGridTextColumn Header="System.currentMills" Binding="{Binding SysCurrentMills, Mode=OneTime}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+                <StackPanel Grid.Row="1" Orientation="Horizontal"
+                            Margin="0 10 0 0">
+                    <Button Command="{Binding CopyToClipboard}">Copy to Clipboard</Button>
+                </StackPanel>
+            </Grid>
         </GroupBox>
     </Grid>
 </UserControl>
