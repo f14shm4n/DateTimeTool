@@ -25,7 +25,7 @@ Example, you want to add or sutract a speficied numbers of days, hours, mins, se
 
 The result is present as: Local date and time, UTC date and time and a elapsed milliseconds from 01.01.1970 00:00:00.
 
-![Offest-tab](assets/docs/dtt_offset.png)
+![Offest-tab](https://github.com/f14shm4n/DateTimeTool/blob/dev/DateTimeTool/Assets/Docs/dtt_offset.PNG)
 
 ## For developers
 
