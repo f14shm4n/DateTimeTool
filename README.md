@@ -10,7 +10,7 @@ Target platform: [**.Net Framework 4.6.1**](https://www.microsoft.com/net/downlo
 
 ## What this app can do?
 
-* [Offset calculation](#offest-calculation)
+* [Offset calculation](#offset-calculation)
 
 ### Offset calculation
 
