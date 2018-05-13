@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:DateTimeTool"
         xmlns:tabs="clr-namespace:DateTimeTool.Tabs"
         mc:Ignorable="d"
-        Title="DateTime Tool" Height="363.537" Width="812.284" ResizeMode="NoResize">
+        Title="DateTime Tool" Height="384.537" Width="812.284" ResizeMode="NoResize">
     <Grid>
         <TabControl>
             <TabItem Header="Offset" 

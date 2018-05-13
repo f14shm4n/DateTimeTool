@@ -73,6 +73,7 @@
     <Compile Include="Core\DateAndTimeResult.cs" />
     <Compile Include="Core\NotifyModel.cs" />
     <Compile Include="Core\RelayCommand.cs" />
+    <Compile Include="Core\TimeHelper.cs" />
     <Compile Include="Tabs\DateAndTime.xaml.cs">
       <DependentUpon>DateAndTime.xaml</DependentUpon>
     </Compile>
