@@ -31,6 +31,8 @@ The result is present as: Local date and time, UTC date and time and a elapsed m
 
 Created in: [**Visual Studio 2017**](https://www.visualstudio.com/downloads)
 
+UI Styles: [**MahApps**](https://mahapps.com/)
+
 ## License
 
 [MIT](https://opensource.org/licenses/MIT)
