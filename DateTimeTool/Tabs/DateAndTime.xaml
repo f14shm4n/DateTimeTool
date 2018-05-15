@@ -148,7 +148,7 @@
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Local" Binding="{Binding LocalTime, Mode=OneTime}" />
                         <DataGridTextColumn Header="UTC" Binding="{Binding UtcTime, Mode=OneTime}" />
-                        <DataGridTextColumn Header="System.currentMills" Binding="{Binding SysCurrentMills, Mode=OneTime}" />
+                        <DataGridTextColumn Header="Current Millis" Binding="{Binding CurrentMillis, Mode=OneTime}" />
                     </DataGrid.Columns>
                 </DataGrid>
                 <StackPanel Grid.Row="1" Orientation="Horizontal"

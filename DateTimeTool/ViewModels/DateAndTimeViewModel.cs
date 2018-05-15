@@ -237,7 +237,7 @@ namespace DateTimeTool.ViewModels
         public ICommand CopyToClipboard => _copyToClipboard ?? (_copyToClipboard = new RelayCommand(_ =>
         {
             var r = Results[0];
-            Clipboard.SetText($"Local: {r.LocalTime}\nUTC: {r.UtcTime}\nSystem.CurrentMills: {r.SysCurrentMills}");            
+            Clipboard.SetText($"Local: {r.LocalTime}\nUTC: {r.UtcTime}\nSystem.CurrentMills: {r.CurrentMillis}");            
         }));
 
         #endregion
