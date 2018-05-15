@@ -70,15 +70,28 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\DateTimePanel.xaml.cs">
+      <DependentUpon>DateTimePanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Core\DateAndTimeResult.cs" />
     <Compile Include="Core\NotifyModel.cs" />
+    <Compile Include="Core\RangeTabResult.cs" />
     <Compile Include="Core\RelayCommand.cs" />
     <Compile Include="Core\TimeHelper.cs" />
     <Compile Include="Tabs\DateAndTime.xaml.cs">
       <DependentUpon>DateAndTime.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\RangeTab.xaml.cs">
+      <DependentUpon>RangeTab.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\DateAndTimeViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\RangeViewModel.cs" />
+    <Compile Include="ViewModels\DateTimeViewModel.cs" />
+    <Page Include="Controls\DateTimePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -92,6 +105,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Tabs\DateAndTime.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tabs\RangeTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
