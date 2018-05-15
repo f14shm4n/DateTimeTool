@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace DateTimeTool.Tabs
 {
     /// <summary>
-    /// Логика взаимодействия для DateAndTime.xaml
+    /// Логика взаимодействия для RangeTab.xaml
     /// </summary>
-    public partial class DateAndTime : UserControl
+    public partial class RangeTab : UserControl
     {
-        public DateAndTime()
+        public RangeTab()
         {
             InitializeComponent();
         }

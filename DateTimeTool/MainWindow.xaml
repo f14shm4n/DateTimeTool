@@ -10,9 +10,11 @@
         Title="DateTime Tool" Height="384.537" Width="812.284" ResizeMode="NoResize">
     <Grid>
         <TabControl>
-            <TabItem Header="Offset" 
-                     controls:ControlsHelper.HeaderFontSize="16">
-                <tabs:DateAndTime DataContext="{Binding DateAndTimeContext}" />
+            <TabItem Header="Offset" controls:ControlsHelper.HeaderFontSize="16">
+                <tabs:OffsetTab DataContext="{Binding DateAndTimeContext}" />
+            </TabItem>
+            <TabItem Header="Range" controls:ControlsHelper.HeaderFontSize="16">
+                <tabs:RangeTab DataContext="{Binding RangeVM}" />
             </TabItem>
         </TabControl>
     </Grid>

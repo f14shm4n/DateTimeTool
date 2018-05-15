@@ -70,15 +70,28 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Core\DateAndTimeResult.cs" />
+    <Compile Include="Controls\DateTimePanel.xaml.cs">
+      <DependentUpon>DateTimePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Core\OffsetTabResult.cs" />
     <Compile Include="Core\NotifyModel.cs" />
+    <Compile Include="Core\RangeTabResult.cs" />
     <Compile Include="Core\RelayCommand.cs" />
     <Compile Include="Core\TimeHelper.cs" />
-    <Compile Include="Tabs\DateAndTime.xaml.cs">
-      <DependentUpon>DateAndTime.xaml</DependentUpon>
+    <Compile Include="Tabs\OffsetTab.xaml.cs">
+      <DependentUpon>OffsetTab.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\DateAndTimeViewModel.cs" />
+    <Compile Include="Tabs\RangeTab.xaml.cs">
+      <DependentUpon>RangeTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\OffsetViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\RangeViewModel.cs" />
+    <Compile Include="ViewModels\DateTimeViewModel.cs" />
+    <Page Include="Controls\DateTimePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -91,7 +104,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Tabs\DateAndTime.xaml">
+    <Page Include="Tabs\OffsetTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tabs\RangeTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -126,9 +143,11 @@
   <ItemGroup>
     <Resource Include="Assets\shell32_16771.ico" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Resource Include="Assets\Docs\dtt_offset.PNG" />
+    <Resource Include="Assets\Docs\dtt_range.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Docs\dtt_offset.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

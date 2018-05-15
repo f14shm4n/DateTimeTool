@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace DateTimeTool.Core
 {
-    public class DateAndTimeResult
+    public class OffsetTabResult
     {
         private const string DateTimeFormat = "dd MMM yyyy HH:mm:ss";
                 
-        public DateAndTimeResult(DateTime date)
+        public OffsetTabResult(DateTime date)
         {
             Value = date;
         }
@@ -18,6 +18,6 @@ namespace DateTimeTool.Core
         public DateTime Value { get; set; }
         public string LocalTime => Value.ToString(DateTimeFormat);
         public string UtcTime => Value.ToUniversalTime().ToString(DateTimeFormat);
-        public long SysCurrentMills => TimeHelper.CurrentTimeMillis(Value);
+        public long CurrentMillis => TimeHelper.CurrentTimeMillis(Value);
     }
 }

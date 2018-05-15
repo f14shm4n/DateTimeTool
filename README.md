@@ -11,6 +11,7 @@ Target platform: [**.Net Framework 4.6.1**](https://www.microsoft.com/net/downlo
 ## What this app can do?
 
 * [Offset calculation](#offest-calculation)
+* [Range calculation](#range-calculation)
 
 ### Offset calculation
 
@@ -25,7 +26,15 @@ Example, you want to add or sutract a speficied numbers of days, hours, mins, se
 
 The result is present as: Local date and time, UTC date and time and a elapsed milliseconds from 01.01.1970 00:00:00.
 
-![Offest-tab](https://github.com/f14shm4n/DateTimeTool/blob/dev/DateTimeTool/Assets/Docs/dtt_offset.PNG)
+![Offest-tab](https://github.com/f14shm4n/DateTimeTool/blob/dev/DateTimeTool/Assets/Docs/dtt_offset.png)
+
+### Range calculation
+
+The **Range** tab provides an ability to calculate a time span between two dates.
+
+The result is present as: TimeSpan value, Total days, Total hours, Total seconds, Total milliseconds.
+
+![Offest-tab](https://github.com/f14shm4n/DateTimeTool/blob/dev/DateTimeTool/Assets/Docs/dtt_range.png)
 
 ## For developers
 
