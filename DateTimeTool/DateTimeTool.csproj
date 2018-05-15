@@ -73,18 +73,18 @@
     <Compile Include="Controls\DateTimePanel.xaml.cs">
       <DependentUpon>DateTimePanel.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Core\DateAndTimeResult.cs" />
+    <Compile Include="Core\OffsetTabResult.cs" />
     <Compile Include="Core\NotifyModel.cs" />
     <Compile Include="Core\RangeTabResult.cs" />
     <Compile Include="Core\RelayCommand.cs" />
     <Compile Include="Core\TimeHelper.cs" />
-    <Compile Include="Tabs\DateAndTime.xaml.cs">
-      <DependentUpon>DateAndTime.xaml</DependentUpon>
+    <Compile Include="Tabs\OffsetTab.xaml.cs">
+      <DependentUpon>OffsetTab.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tabs\RangeTab.xaml.cs">
       <DependentUpon>RangeTab.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\DateAndTimeViewModel.cs" />
+    <Compile Include="ViewModels\OffsetViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\RangeViewModel.cs" />
     <Compile Include="ViewModels\DateTimeViewModel.cs" />
@@ -104,7 +104,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Tabs\DateAndTime.xaml">
+    <Page Include="Tabs\OffsetTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

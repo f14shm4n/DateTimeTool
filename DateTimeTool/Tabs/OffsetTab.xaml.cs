@@ -18,9 +18,9 @@ namespace DateTimeTool.Tabs
     /// <summary>
     /// Логика взаимодействия для DateAndTime.xaml
     /// </summary>
-    public partial class DateAndTime : UserControl
+    public partial class OffsetTab : UserControl
     {
-        public DateAndTime()
+        public OffsetTab()
         {
             InitializeComponent();
         }

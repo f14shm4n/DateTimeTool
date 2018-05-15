@@ -10,10 +10,10 @@ namespace DateTimeTool.ViewModels
     {
         public MainViewModel()
         {
-            DateAndTimeContext = new DateAndTimeViewModel();
+            DateAndTimeContext = new OffsetViewModel();
         }
 
-        public DateAndTimeViewModel DateAndTimeContext { get; set; }
+        public OffsetViewModel DateAndTimeContext { get; set; }
 
         private RangeViewModel _ragenVM;
         public RangeViewModel RangeVM => _ragenVM ?? (_ragenVM = new RangeViewModel());

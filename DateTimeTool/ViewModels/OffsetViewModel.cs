@@ -11,13 +11,20 @@ using System.Windows.Input;
 
 namespace DateTimeTool.ViewModels
 {
-    public class DateAndTimeViewModel : NotifyModel
+    public class OffsetViewModel : NotifyModel
     {
         public enum DateTimeActionType
         {
             Add = 1,
             Subtract = 2
         }
+
+        #region Nested VMs
+
+        private DateTimeViewModel _startDateVM;
+        public DateTimeViewModel StartDateVM => _startDateVM ?? (_startDateVM = new DateTimeViewModel());
+
+        #endregion
 
         #region Properties
 
@@ -37,67 +44,7 @@ namespace DateTimeTool.ViewModels
                     OnPropertyChanged();
                 }
             }
-        }
-
-        #region Current date and time
-
-        private DateTime? _currentDate;
-        public DateTime? CurrentDate
-        {
-            get => _currentDate;
-            set
-            {
-                if (_currentDate != value)
-                {
-                    _currentDate = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-
-        private double? _currentTime_hh;
-        public double? CurrentTime_HH
-        {
-            get => _currentTime_hh;
-            set
-            {
-                if (_currentTime_hh != value)
-                {
-                    _currentTime_hh = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-
-        private double? _currentTime_mm;
-        public double? CurrentTime_MM
-        {
-            get => _currentTime_mm;
-            set
-            {
-                if (_currentTime_mm != value)
-                {
-                    _currentTime_mm = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-
-        private double? _currentTime_ss;
-        public double? CurrentTime_SS
-        {
-            get => _currentTime_ss;
-            set
-            {
-                if (_currentTime_ss != value)
-                {
-                    _currentTime_ss = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-
-        #endregion
+        }       
 
         #region Offset
 
@@ -159,54 +106,26 @@ namespace DateTimeTool.ViewModels
 
         #endregion
 
-        private ObservableCollection<DateAndTimeResult> _results;
-        public ObservableCollection<DateAndTimeResult> Results => _results ?? (_results = new ObservableCollection<DateAndTimeResult>());
+        private ObservableCollection<OffsetTabResult> _results;
+        public ObservableCollection<OffsetTabResult> Results => _results ?? (_results = new ObservableCollection<OffsetTabResult>());
 
         #endregion
 
         #region Cmd
 
-        private ICommand _nowDateCmd;
-        public ICommand NowDateCmd => _nowDateCmd ?? (_nowDateCmd = new RelayCommand(_ =>
-        {
-            var now = DateTime.Now;
-            CurrentDate = now;
-            CurrentTime_HH = now.Hour;
-            CurrentTime_MM = now.Minute;
-            CurrentTime_SS = now.Second;
-        }));
-
-        private ICommand _nowDateResetCmd;
-        public ICommand NowDateResetCmd => _nowDateResetCmd ?? (_nowDateResetCmd = new RelayCommand(_ =>
-        {
-            CurrentDate = null;
-            CurrentTime_HH = null;
-            CurrentTime_MM = null;
-            CurrentTime_SS = null;
-        }));
-
         private ICommand _calculateCmd;
         public ICommand CalculateCmd => _calculateCmd ?? (_calculateCmd = new RelayCommand(_ =>
         {
-            if (CurrentDate == null)
+            DateTime date;
+
+            try
             {
-                MessageBox.Show("The initial date is not set.", "Empty data.", MessageBoxButton.OK, MessageBoxImage.Warning);
+                date = _startDateVM.Compose();
+            }
+            catch (InvalidOperationException)
+            {
+                MessageBox.Show("The start date is not set.", "Error.", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
-            }
-
-            DateTime date = CurrentDate.Value.Date;
-
-            if (CurrentTime_HH != null)
-            {
-                date = date.AddHours(CurrentTime_HH.Value);
-            }
-            if (CurrentTime_MM != null)
-            {
-                date = date.AddMinutes(CurrentTime_MM.Value);
-            }
-            if (CurrentTime_SS != null)
-            {
-                date = date.AddSeconds(CurrentTime_SS.Value);
             }
 
             DateTimeActionType actionType = (DateTimeActionType)Enum.Parse(typeof(DateTimeActionType), SelectedAction);
@@ -228,7 +147,7 @@ namespace DateTimeTool.ViewModels
                 date = date.AddSeconds(actionType == DateTimeActionType.Add ? OffsetTime_SS.Value : -OffsetTime_SS.Value);
             }
 
-            var r = new DateAndTimeResult(date);
+            var r = new OffsetTabResult(date);
             Results.Clear();
             Results.Add(r);
         }));
