@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="DateTimeTool.Controls.DateTimePanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:local="clr-namespace:DateTimeTool.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel>
+            <Label DockPanel.Dock="Left">Date:</Label>
+            <DatePicker DockPanel.Dock="Right" SelectedDate="{Binding Date, Mode=TwoWay}" />
+        </DockPanel>
+
+        <DockPanel Grid.Row="1" Margin="0 10 0 0">
+            <Label>Time:</Label>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <controls:NumericUpDown controls:TextBoxHelper.Watermark="hh" 
+                                        Margin="0 0 5 0" 
+                                        Grid.Column="0"
+                                        Maximum="24"
+                                        Minimum="0"
+                                        Value="{Binding Time_HH}"></controls:NumericUpDown>
+                <controls:NumericUpDown controls:TextBoxHelper.Watermark="mm" 
+                                        Margin="0 0 5 0" 
+                                        Grid.Column="1"
+                                        Maximum="60"
+                                        Minimum="0"
+                                        Value="{Binding Time_MM}"></controls:NumericUpDown>
+                <controls:NumericUpDown controls:TextBoxHelper.Watermark="ss" 
+                                        Margin="0 0 5 0"
+                                        Grid.Column="2"
+                                        Maximum="60"
+                                        Minimum="0"
+                                        Value="{Binding Time_SS}"></controls:NumericUpDown>
+            </Grid>
+        </DockPanel>
+
+        <DockPanel Grid.Row="2" Margin="0 10 0 0" LastChildFill="False">
+            <Button DockPanel.Dock="Left" 
+                    Margin="0 0 10 0"
+                    Command="{Binding NowCmd}">Now</Button>
+            <Button DockPanel.Dock="Left"
+                    Command="{Binding ResetCmd}">Reset</Button>
+        </DockPanel>
+    </Grid>
+</UserControl>

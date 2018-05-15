@@ -14,5 +14,8 @@ namespace DateTimeTool.ViewModels
         }
 
         public DateAndTimeViewModel DateAndTimeContext { get; set; }
+
+        private RangeViewModel _ragenVM;
+        public RangeViewModel RangeVM => _ragenVM ?? (_ragenVM = new RangeViewModel());
     }
 }
