@@ -39,7 +39,7 @@
                           BorderThickness="1"
                           ItemsSource="{Binding Results}">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Time span" Binding="{Binding TimeSpan, StringFormat='{}{0:dd} days {0:hh\\:mm\\:ss}', Mode=OneTime}" />
+                        <DataGridTextColumn Header="Time span" Binding="{Binding TimeSpan, StringFormat='dd\\.hh\\:mm\\:ss', Mode=OneTime}" />
                         <DataGridTextColumn Header="Total Days" Binding="{Binding TimeSpan.TotalDays, StringFormat=0.###, Mode=OneTime}" />
                         <DataGridTextColumn Header="Total hours" Binding="{Binding TimeSpan.TotalHours, StringFormat=0.###, Mode=OneTime}" />
                         <DataGridTextColumn Header="Total mins" Binding="{Binding TimeSpan.TotalMinutes, StringFormat=0.###, Mode=OneTime}" />

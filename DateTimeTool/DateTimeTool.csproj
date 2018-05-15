@@ -143,9 +143,11 @@
   <ItemGroup>
     <Resource Include="Assets\shell32_16771.ico" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Resource Include="Assets\Docs\dtt_offset.PNG" />
+    <Resource Include="Assets\Docs\dtt_range.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Docs\dtt_offset.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

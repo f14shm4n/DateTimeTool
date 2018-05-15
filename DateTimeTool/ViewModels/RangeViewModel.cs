@@ -61,7 +61,7 @@ namespace DateTimeTool.ViewModels
         public ICommand CopyToClipboard => _copyToClipboard ?? (_copyToClipboard = new RelayCommand(_ =>
         {
             var r = Results[0];
-            Clipboard.SetText($"Time span: {r.TimeSpan.ToString("dd")} days {r.TimeSpan.ToString("hh\\:mm\\:ss")}\nTotalDays: {r.TimeSpan.TotalDays}\nTotalHours: {r.TimeSpan.TotalHours}\nTotalMinutes: {r.TimeSpan.TotalMinutes}\nTotalSeconds: {r.TimeSpan.TotalSeconds}\nTotalMilliseconds: {r.TimeSpan.TotalMilliseconds}");
+            Clipboard.SetText($"Time span: {r.TimeSpan.ToString("dd\\.hh\\:mm\\:ss")}\nTotalDays: {r.TimeSpan.TotalDays}\nTotalHours: {r.TimeSpan.TotalHours}\nTotalMinutes: {r.TimeSpan.TotalMinutes}\nTotalSeconds: {r.TimeSpan.TotalSeconds}\nTotalMilliseconds: {r.TimeSpan.TotalMilliseconds}");
         }));
 
         #endregion
