@@ -6,7 +6,9 @@ The simple tool that provides a calculation actions for date and time.
 
 Target OS: **Windows**
 
-Target platform: [**.Net Framework 4.6.1**](https://www.microsoft.com/net/download/Windows/run)
+Target platforms:
+* [**.Net Framework 4.6.1**](https://www.microsoft.com/net/download/Windows/run)
+* [**.Net Core 3.0**](https://dotnet.microsoft.com/download/dotnet-core/3.0)
 
 ## What this app can do?
 
