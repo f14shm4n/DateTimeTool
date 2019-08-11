@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "md", "md", "{9FE3D90C-DC13-
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateTimeTool.NetCore", "DateTimeTool.NetCore\DateTimeTool.NetCore.csproj", "{CA9D001B-A51A-4905-AE9F-BB71FADF64BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A160E9F3-2939-48D9-B1B8-DB42C8B6BA60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A160E9F3-2939-48D9-B1B8-DB42C8B6BA60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A160E9F3-2939-48D9-B1B8-DB42C8B6BA60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA9D001B-A51A-4905-AE9F-BB71FADF64BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA9D001B-A51A-4905-AE9F-BB71FADF64BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA9D001B-A51A-4905-AE9F-BB71FADF64BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA9D001B-A51A-4905-AE9F-BB71FADF64BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

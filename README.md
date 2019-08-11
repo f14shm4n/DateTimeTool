@@ -34,7 +34,7 @@ The **Range** tab provides an ability to calculate a time span between two dates
 
 The result is present as: TimeSpan value, Total days, Total hours, Total seconds, Total milliseconds.
 
-![Offest-tab](https://github.com/f14shm4n/DateTimeTool/blob/dev/DateTimeTool/Assets/Docs/dtt_range.png)
+![Range-tab](https://github.com/f14shm4n/DateTimeTool/blob/dev/DateTimeTool/Assets/Docs/dtt_range.png)
 
 ## For developers
 

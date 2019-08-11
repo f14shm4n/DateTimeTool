@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AssemblyName>DateTimeTool</AssemblyName>
+    <RootNamespace>DateTimeTool</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ApplicationDefinition Include="..\DateTimeTool\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\DateTimeTool\**\*.cs" Exclude="..\DateTimeTool\obj\**" />
+    <None Include="..\DateTimeTool\**\*.settings" />
+    <EmbeddedResource Include="..\DateTimeTool\**\*.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0455" />
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="3.0.0-preview7.19362.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="..\DateTimeTool\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>  
+    <Page Include="..\DateTimeTool\Tabs\OffsetTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\DateTimeTool\Tabs\RangeTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>   
+    <Page Include="..\DateTimeTool\Controls\DateTimePanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+</Project>
